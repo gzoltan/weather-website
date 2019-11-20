@@ -32,5 +32,4 @@ app.get('/weather', (req, res) => {
     })
 })
 
-
 app.listen(3000)
