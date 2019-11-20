@@ -5,6 +5,7 @@ const  hbs  = require('express-handlebars');
 const weather = require('./utils/weather/weather')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 app.engine('hbs', hbs({extname: '.hbs'}))
 
@@ -32,4 +33,6 @@ app.get('/weather', (req, res) => {
     })
 })
 
-app.listen(3000)
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`)
+})

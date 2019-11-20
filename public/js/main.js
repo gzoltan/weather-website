@@ -1,6 +1,6 @@
 const weather = (location, callback) => {
     if (!location) return callback('Please provide a location', null)
-    fetch(`http://localhost:3000/weather?location=${location}`).then(response => {
+    fetch(`/weather?location=${location}`).then(response => {
         response.json().then(data => {
             callback(null, data)
         })
