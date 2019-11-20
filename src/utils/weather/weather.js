@@ -7,6 +7,7 @@ const weather = (location, callback) => {
         if (error) return callback(error, null)
         forecast(data.lat, data.long, (error, forecastData) => {
             if (error) return callback(error, null)
+            forecastData.placeName = data.placeName
             return callback(null, forecastData)
         })
         

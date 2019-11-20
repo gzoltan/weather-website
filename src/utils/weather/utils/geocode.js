@@ -5,7 +5,7 @@ const geocode = (location, callback) => {
     request.get({url, json: true}, (error, response) => {
         if (error) return callback(error, null)
         if (response.body.features.length < 1) return callback('Location not found. Please provide another location', null)
-        return callback(null, {lat: response.body.features[0].geometry.coordinates[0], long: response.body.features[0].geometry.coordinates[1]})
+        return callback(null, {lat: response.body.features[0].geometry.coordinates[0], long: response.body.features[0].geometry.coordinates[1], placeName: response.body.features[0].place_name })
     })
 }
 
